@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/styleRecipes.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="scripts/recipe.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<title>Przepisy</title>
+</head>
+    
+<body>
+    <div id="header">
+        <h1>PRZEPISY</h1>
+    </div>
+    
+    <div id="description_div">
+        <div id="div_options">
+            <ul id="options">
+                <a href="javascript:addRecipe(1);">   
+                    <li class="chooser slide-left-right" id="ch1">
+                        <p>SAŁATKA Z GRUSZKĄ I ORZECHAMI WŁOSKIMI</p>
+                    </li>
+                </a>   
+                <a href="javascript:addRecipe(2);">   
+                    <li class="chooser slide-left-right" id="ch2">
+                        <p>OWSIANKA Z PRAŻONYMI JABŁKAMI</p>
+                    </li>
+                </a>   
+                <a href="javascript:addRecipe(3);">   
+                    <li class="chooser slide-left-right" id="ch3">
+                        <p>KREWETKI Z WARZYWAMI PO CHIŃSKU</p>
+                    </li>
+                </a>   
+            </ul>
+        </div>
+        
+        <div id="description">
+            <script type="text/javascript">
+                addRecipe(parseInt(localStorage.getItem('selectedRecipe')));
+            </script>
+            <noscript>
+                <h2>Prosimy o włączenie JavaScript!</h2>
+            </noscript>
+        </div>
+        
+        
+    </div>
+    
+    <div id="footer">
+        <p>2019 Bazyli Polednia</p>
+        <p>Whole content, including images and text, is open source</p>
+    </div>
+</body>

@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/styleAuthors.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<title>Przepisy</title>
+</head>
+    
+<body>
+    <div id="header">
+        <h1>AUTORZY</h1>
+    </div>
+    
+    <div id="description_div">
+        <div id="description">
+            <div class="iconWrapper">
+                <img src="img/author1.jpg" class="icons" id="icon1">
+                <h2>Adam Kowalski</h2>
+            </div>
+            <div class="iconWrapper">
+                <img src="img/author2.jpg" class="icons" id="icon2">
+                <h2>Jan Nowak</h2>
+            </div>
+            <div class="iconWrapper">
+                <img src="img/author3.jpg" class="icons" id="icon3">
+                <h2>Anna Malinowska</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer">
+        <p>2019 Bazyli Polednia</p>
+        <p>Whole content, including images and text, is open source</p>
+    </div>
+    
+    <script>
+        $( document ).ready(function() {
+           $( '#icon1' ).fadeIn("slow", function(){});
+        });
+
+        $('#icon1').hover(function(){
+            $( '#icon1' ).fadeIn("slow", "linear", function(){});
+            $('#icon1').css("border", "1px solid #ff0000");
+        },function(){
+            $('img#icon1').css("border", "1px solid #ffffff");
+        });
+
+        $('#icon2').hover(function(){
+            $('#icon2').css("border", "1px solid #ff0000");
+        },function(){
+            $('#icon2').css("border", "1px solid #ffffff");
+        });
+
+        $('#icon3').hover(function(){
+            $('#icon3').css("border", "1px solid #ff0000");
+        },function(){
+            $('#icon3').css("border", "1px solid #ffffff");
+        });
+    </script>
+</body>
