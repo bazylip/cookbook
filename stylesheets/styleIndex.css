@@ -65,8 +65,8 @@ html{
 #description_div {
     background-color: #ffffff;
     width: 100%;
-    padding-top: 8%;
-    padding-bottom: 8%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 #description {
@@ -88,6 +88,17 @@ html{
 
 img {
     border-radius: 10px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    width: 30%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 
 a:link { color: #000000; text-decoration: none}

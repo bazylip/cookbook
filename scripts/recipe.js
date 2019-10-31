@@ -1,6 +1,13 @@
 var portions = 1;
 
+
+
 function addRecipe(numOfRecipe){
+    if('portions' in sessionStorage){
+        portions = sessionStorage.getItem('portions');
+    }else{
+        portions = 1;
+    }
     document.getElementById("description_div").removeChild(document.getElementById("description"));
     var recipeDiv = document.createElement("div");
     recipeDiv.setAttribute("id", "description");
@@ -70,7 +77,7 @@ function addRecipe(numOfRecipe){
             <button id="getvalue">Zatwierdź</button>
         </p>
         <ul>
-            <li>`+(portions*100).toString()+` g ryżu (1 torebka)</li>
+            <li>`+(portions*100).toString()+` g ryżu</li>
             <li>ok. `+(portions*250).toString()+` g mrożonych krewetek</li>
             <li>`+(portions*2).toString()+` łyżki oleju roślinnego</li>
             <li>`+(portions*0.5).toString()+` marchewki</li>
@@ -116,14 +123,18 @@ function addRecipe(numOfRecipe){
     }
     
     $( function() {
-        var spinner = $( "#spinner" ).spinner();
+    var spinner = $( "#spinner" ).spinner().val(portions);
 
-        $( "#getvalue" ).on( "click", function() {
-          portions = spinner.spinner("value");
+    $( "#getvalue" ).on( "click", function() {
+        if(spinner.spinner("value") > 0){
+            sessionStorage.setItem('portions', spinner.spinner("value"));
             addRecipe(numOfRecipe);
-        });
+        }else{
+            $( "#dialog" ).dialog('open');
+        }
+    });
 
-        $( "button" ).button();
+    $( "button" ).button();
     } );
     localStorage.setItem('selectedRecipe', numOfRecipe.toString());
     document.getElementById("description_div").appendChild(recipeDiv);
